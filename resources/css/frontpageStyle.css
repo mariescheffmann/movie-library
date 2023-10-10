@@ -1,0 +1,14 @@
+.navBarContainer {
+    display: flex;
+    background-color: rgb(70, 8, 151);
+}
+
+.searchBar {
+    background-color: rgb(156, 108, 213);
+    
+}
+ion-icon {
+    --ionicon-stroke-width: 140px;
+    color: #000;
+    background-color: white;
+  }
