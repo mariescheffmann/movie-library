@@ -9,6 +9,20 @@
     text-align: center;
 }
 
+.searchBar input[type=text] {
+    padding: 6px;
+    border: none;
+    margin-top: 8px;
+    font-size: 17px;
+}
+
+.search {
+    padding: 6px;
+    border: none;
+    margin-top: 8px;
+    font-size: 17px;
+}
+
 .menu{
     margin: 1em;
     padding: 1em; 
