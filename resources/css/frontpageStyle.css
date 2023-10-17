@@ -17,6 +17,7 @@
 .login {
     margin: 1em;
     align-self: center;
+    padding: 1em;
 }
 
 ion-icon{
@@ -25,4 +26,26 @@ ion-icon{
     padding: 0.1em;
     border-radius: 50%;
     border: 3px solid;
+}
+
+.contentsContainer {
+    display: flex;
+}
+
+.movies {
+    padding-left: 1em;
+    padding-right: 1em;
+    padding-top: 1em;
+    flex-grow: 1;
+}
+
+.listOfMovies {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.actors {
+    padding-left: 1em;
+    padding-right: 1em;
+    background-color: rgb(154, 94, 232);
 }
