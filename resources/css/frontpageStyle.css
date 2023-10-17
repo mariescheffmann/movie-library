@@ -1,14 +1,28 @@
 .navBarContainer {
     display: flex;
-    background-color: rgb(70, 8, 151);
+    background-color: rgb(154, 94, 232);
 }
 
 .searchBar {
-    background-color: rgb(156, 108, 213);
-    
+    align-self: center;
+    flex-grow: 1;
+    text-align: center;
 }
-ion-icon {
-    --ionicon-stroke-width: 140px;
+
+.menu{
+    margin: 1em;
+    padding: 1em; 
+}
+
+.login {
+    margin: 1em;
+    align-self: center;
+}
+
+ion-icon{
     color: #000;
-    background-color: white;
-  }
+    background: white;
+    padding: 0.1em;
+    border-radius: 50%;
+    border: 3px solid;
+}
