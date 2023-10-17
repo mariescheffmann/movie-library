@@ -42,10 +42,17 @@ ion-icon{
 .listOfMovies {
     display: flex;
     flex-wrap: wrap;
+    gap: 1em;
 }
 
 .actors {
     padding-left: 1em;
     padding-right: 1em;
     background-color: rgb(154, 94, 232);
+}
+
+.listOfActors {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
 }
