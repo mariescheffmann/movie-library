@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\FrontpageController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,13 +15,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [FrontpageController::class, 'getMovies']);
 
-Route::get('/frontpage', function () {
-    return view('frontpage');
-});
+Route::get('frontpage', [FrontpageController::class, 'getMovies'])->name('frontpage');
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -36,8 +34,8 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-Route::get('/commenthistory', function() {
+Route::get('/commenthistory', function () {
     return view('commenthistory');
 });
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';

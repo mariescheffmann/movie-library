@@ -5,11 +5,12 @@
             <div class="flex">
                 <!-- Logo -->
                 <div class="shrink-0 flex items-center">
-                    <a href="{{ route('dashboard') }}">
+                    <a href="{{ route('frontpage') }}">
                         {{-- <x-application-logo class="block h-9 w-auto fill-current text-gray-800 dark:text-gray-200" /> --}}
                         <ion-icon name="film-outline" size="large" class="text-gray-300"></ion-icon>
                     </a>
                 </div>
+            @auth
 
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
@@ -104,6 +105,21 @@
             </div>
         </div>
     </div>
+    @endauth
+
+    @if (Route::has('login'))
+        <div class="sm:fixed sm:top-0 sm:right-0 p-6 text-right z-10">
+            @auth
+            
+            @else
+            <a href="{{ route('login') }}" class="font-semibold text-gray-200 hover:text-gray-200 dark:text-gray-200 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-purple-500">Log in</a>
+
+            @if (Route::has('register'))
+            <a href="{{ route('register') }}" class="ml-4 font-semibold text-gray-200 hover:text-gray-200 dark:text-gray-200 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-purple-500">Register</a>
+            @endif
+            @endauth
+        </div>
+        @endif
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </nav>
