@@ -1,6 +1,7 @@
+<x-app-layout>
 <!DOCTYPE html>
 <head>
-    <link rel="stylesheet" href="css/frontpageStyle.css">
+    <link rel="stylesheet" href="css/commenthistoryStyle.css">
     <title>Frontpage</title>
 </head>
 <body>
@@ -65,3 +66,4 @@
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>
+</x-app-layout>

@@ -1,6 +1,7 @@
+
 <!DOCTYPE html>
 <head>
-    <link rel="stylesheet" href="css/commenthistoryStyle.css">
+    <link rel="stylesheet" href="css/frontpageStyle.css">
     <title>Frontpage</title>
 </head>
 <body>
