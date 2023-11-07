@@ -1,8 +1,8 @@
 
-.navBarContainer {
+/* .navBarContainer {
     display: flex;
     background-color: rgb(154, 94, 232);
-}
+} */
 
 .searchBar {
     align-self: center;
@@ -10,7 +10,7 @@
     text-align: center;
 }
 
-.searchBar input[type=text] {
+.searchBar input[type="text"] {
     padding: 6px;
     border: none;
     margin-top: 8px;
@@ -23,10 +23,10 @@
     font-size: 17px;
 }
 
-.menu{
+/* .menu {
     margin: 1em;
-    padding: 1em; 
-}
+    padding: 1em;
+} */
 
 .login {
     margin: 1em;
@@ -34,7 +34,7 @@
     padding: 1em;
 }
 
-ion-icon{
+ion-icon {
     color: #000;
     background: white;
     padding: 0.1em;
