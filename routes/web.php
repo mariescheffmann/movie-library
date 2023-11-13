@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CommentHistoryController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\FrontpageController;
 use Illuminate\Support\Facades\Route;
@@ -34,8 +35,6 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-Route::get('/commenthistory', function () {
-    return view('commenthistory');
-});
+Route::get('/commenthistory', [CommentHistoryController::class, 'getMockupComments']);
 
 require __DIR__ . '/auth.php';
