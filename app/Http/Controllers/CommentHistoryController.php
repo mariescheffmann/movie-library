@@ -10,7 +10,6 @@ use App\Models\MockupComment;
 class CommentHistoryController extends Controller
 {
 
-
     public function getMockupComments()
     {
         $mockupComments = MockupComment::all()->toArray();

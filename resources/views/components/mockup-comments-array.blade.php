@@ -1,9 +1,5 @@
-<?php
-use App\Models\MockupComment;
-
-$mockupComments = MockupComment::all()->toArray();
-
-foreach ($mockupComments as $mockupComment) {
-    $comment = $mockupComment['content'];
-    echo asset($comment);
-}
+<div class="mockupComments flex flex-row w-500 white-space-nowrap overflow-x-auto p-20 pb-5 pt-5">
+    @foreach ($mockupComments as $comment)
+        <p>{{ $comment['content'] }}</p>
+    @endforeach
+</div>
