@@ -11,5 +11,5 @@ class Actor extends Model
 
     protected $Actors = 'Actors'; // Specify the table name if it's different from the model's name
 
-    protected $column = ['id','name', 'image_link', 'description'];
+    protected $column = ['id','name', 'imageReference', 'description'];
 }
