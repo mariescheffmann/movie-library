@@ -37,6 +37,7 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-Route::get('/commenthistory', [CommentHistoryController::class, 'getMockupComments']);
+Route::get('/commenthistory', [CommentHistoryController::class, 'getMockupComments'])
+->middleware(['auth', 'verified'])->name('commenthistory');
 
 require __DIR__ . '/auth.php';

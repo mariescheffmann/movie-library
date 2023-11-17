@@ -6,7 +6,7 @@
     </head>
     <body>
         <div class="contentsContainer">
-            <div class="text-gray-200 dark:text-gray-200 pt-10 pl-20 text-2xl">
+            <div class="text-gray-200 dark:text-gray-200 pt-10 pl-20 pr-20">
                 <x-mockup-comments-array :mockupComments="$mockupComments"/> <!-- Gets comments from component -->
             </div>
             <!-- <div class="actors">

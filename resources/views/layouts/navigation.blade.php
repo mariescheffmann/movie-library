@@ -48,6 +48,15 @@
                             </script>
                         </x-dropdown-link>
 
+                        <form method="GET" action="{{ route('commenthistory') }}">
+                            @csrf
+                            <x-dropdown-link :href="route('commenthistory')" onclick="event.preventDefault();
+                                this.closest('form').submit();">
+                                {{ __('Comment History') }}
+                            </x-dropdown-link>
+                        </form>
+                        
+
                         <!-- Authentication -->
                         <form method="POST" action="{{ route('logout') }}">
                             @csrf
