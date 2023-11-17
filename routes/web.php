@@ -3,6 +3,7 @@
 use App\Http\Controllers\CommentHistoryController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\FrontpageController;
+use App\Http\Controllers\MoviepageController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,10 +17,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [FrontpageController::class, 'getMovies']);
+Route::get('/', [FrontpageController::class, 'getInfo']);
 
-Route::get('frontpage', [FrontpageController::class, 'getMovies'])->name('frontpage');
+Route::get('frontpage', [FrontpageController::class, 'getInfo'])->name('frontpage');
 
+Route::get('/movie/{id}', [MoviepageController::class, 'show']);
 
 Route::get('/dashboard', function () {
     return view('dashboard');
