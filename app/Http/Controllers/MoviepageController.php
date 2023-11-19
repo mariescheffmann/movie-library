@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Movie;
 
-class ActorpageController extends Controller
+class MoviepageController extends Controller
 {
     public function show($id)
     {
