@@ -40,4 +40,6 @@ Route::middleware('auth')->group(function () {
 Route::get('/commenthistory', [CommentHistoryController::class, 'getMockupComments'])
 ->middleware(['auth', 'verified'])->name('commenthistory');
 
+Route::delete('/commenthistory/{id}', [CommentHistoryController::class, 'destroy'])->name('commenthistory.destroy');
+
 require __DIR__ . '/auth.php';

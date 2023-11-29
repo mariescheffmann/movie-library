@@ -18,4 +18,15 @@ class CommentHistoryController extends Controller
             'mockupComments' => $mockupComments
         ]);
     }
+
+    /* 
+    * Delete Comment
+    */ 
+    public function destroy($id) {
+        $comment = MockupComment::where('id', $id)->delete();
+        
+
+        return redirect('commenthistory')->with('success',' comment deleted!');
+    }
+
 }
