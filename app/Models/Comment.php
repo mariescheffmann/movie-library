@@ -7,11 +7,16 @@ use Illuminate\Database\Eloquent\Model;
 
 class Comment extends Model
 {
+    public $keyType = 'string'; 
     // use HasFactory;
 
     protected $table = 'comments';
 
     protected $fillable = ['movie', 'comment'];
+
+    public function movie() {
+        return $this->belongsTo(Movie::class, 'movieId');
+    }
 
 
 }

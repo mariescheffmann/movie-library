@@ -4,18 +4,23 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\View;
-use App\Models\MockupComment;
+use App\Models\Comment;
 
 
 class CommentHistoryController extends Controller
 {
 
-    public function getMockupComments()
+    public function getComments()
     {
-        $mockupComments = MockupComment::all()->toArray();
+        $Comments = Comment::all();
+
+        # Debugging test
+        dump($Comments[0]);
+        dump($Comments[0]->movie);
+        dump($Comments[0]->movie->comments);
 
         return View::make('commentHistory', [
-            'mockupComments' => $mockupComments
+            'Comments' => $Comments
         ]);
     }
 
@@ -23,7 +28,7 @@ class CommentHistoryController extends Controller
     * Delete Comment
     */ 
     public function destroy($id) {
-        $comment = MockupComment::where('id', $id)->delete();
+        $comment = Comment::where('id', $id)->delete();
         
 
         return redirect('commenthistory')->with('success',' comment deleted!');

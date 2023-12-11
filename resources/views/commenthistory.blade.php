@@ -7,7 +7,7 @@
     <body>
         <div class="contentsContainer">
             <div class="text-gray-200 dark:text-gray-200 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <x-mockup-comments-array :mockupComments="$mockupComments"/> <!-- Gets comments from component -->
+                <x-mockup-comments-array :Comments="$Comments"/> <!-- Gets comments from component -->
             </div>
         </div>
     </body>

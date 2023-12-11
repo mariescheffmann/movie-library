@@ -22,10 +22,6 @@
                         </x-dropdown-link>
 
                         <x-dropdown-link :href="route('frontpage')">
-                            {{_('History')}}
-                        </x-dropdown-link>
-
-                        <x-dropdown-link :href="route('frontpage')">
                             {{ __('New Releases') }}
                         </x-dropdown-link>
                         </form>

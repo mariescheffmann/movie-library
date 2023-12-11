@@ -40,7 +40,7 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-Route::get('/commenthistory', [CommentHistoryController::class, 'getMockupComments'])
+Route::get('/commenthistory', [CommentHistoryController::class, 'getComments'])
 ->middleware(['auth', 'verified'])->name('commenthistory');
 
 Route::delete('/commenthistory/{id}', [CommentHistoryController::class, 'destroy'])->name('commenthistory.destroy');
