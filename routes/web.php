@@ -4,6 +4,7 @@ use App\Http\Controllers\CommentHistoryController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\FrontpageController;
 use App\Http\Controllers\MoviepageController;
+use App\Http\Controllers\ActorpageController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -22,6 +23,8 @@ Route::get('/', [FrontpageController::class, 'getInfo']);
 Route::get('frontpage', [FrontpageController::class, 'getInfo'])->name('frontpage');
 
 Route::get('/movie/{id}', [MoviepageController::class, 'show']);
+
+Route::get('/actor/{id}', [ActorpageController::class, 'show']);
 
 Route::get('/dashboard', function () {
     return view('dashboard');
