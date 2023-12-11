@@ -12,7 +12,7 @@
             <form method="POST" action="{{ route('commenthistory.destroy', $comment['id']) }}">
             @method('DELETE')
             @csrf
-                <input type="submit" value="Delete" class = "!bg-purple-theme hover:!bg-purple-darker-theme text-white font-bold py-2 px-4 rounded mt-2">
+                <input type="submit" value="Delete" class = "!bg-purple-theme hover:!bg-purple-darker-theme text-white font-bold py-2 px-4 rounded mt-2 mb-2">
             </form> 
         </div>
     </div>
