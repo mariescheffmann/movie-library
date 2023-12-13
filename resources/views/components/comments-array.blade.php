@@ -8,11 +8,25 @@
         <div class = "p-6 box-border h-auto w-auto p-4 border-2 bg-gray-200 rounded">
             <p class = "text-gray-700 text-xl">{{ $comment->comment }}</p>
         </div>
-        <div> <!-- delete button -->
-            <form method="POST" action="{{ route('commenthistory.destroy', $comment['id']) }}">
-            @method('DELETE')
-            @csrf
-                <input type="submit" value="Delete" class = "!bg-purple-theme hover:!bg-purple-darker-theme text-white font-bold py-2 px-4 rounded mt-2 mb-2">
+        <div class="flex"> <!-- Button container -->
+            <div> <!-- activate update functionality button - NOT IMPLEMENTED -->
+                <button id="updateButton" class="!bg-purple-theme hover:!bg-purple-darker-theme text-white font-bold py-2 px-4 rounded mt-2 mb-2 mr-4">Update</button>
+            </div>
+            <div> <!-- delete button -->
+                <form method="POST" action="{{ route('commenthistory.destroy', $comment['id']) }}">
+                @method('DELETE')
+                @csrf
+                    <input type="submit" value="Delete" class = "!bg-purple-theme hover:!bg-purple-darker-theme text-white font-bold py-2 px-4 rounded mt-2 mb-2">
+                </form> 
+            </div>
+            
+        </div>
+        <div> <!-- update functionality -->
+            <form method="POST" action="{{ route('commenthistory.update', $comment['id']) }}">
+                @method('PUT')
+                @csrf
+                <input name="comment" type="text" id="newComment" class="p-6 box-border h-auto w-auto p-4 border-2 bg-gray-200 rounded" value="{{ $comment->newComment }}">
+                <input type="submit" value= "Update" class="!bg-purple-theme hover:!bg-purple-darker-theme text-white font-bold py-2 px-4 rounded mt-2 mb-2 ml-2">
             </form> 
         </div>
     </div>

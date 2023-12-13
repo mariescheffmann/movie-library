@@ -47,4 +47,6 @@ Route::get('/commenthistory', [CommentHistoryController::class, 'getComments'])
 
 Route::delete('/commenthistory/{id}', [CommentHistoryController::class, 'destroy'])->name('commenthistory.destroy');
 
+Route::put('/commenthistory/{id}', [CommentHistoryController::class, 'update'])->name('commenthistory.update');
+
 require __DIR__ . '/auth.php';
