@@ -18,7 +18,7 @@ INSERT INTO people(id,name, birthday, nationality, imageReference, biography) VA
 
 INSERT INTO movieActorRelations(id,actorId, movieId) VALUES
 (4,3, 10),
-(5,6,8);
+(6,6,8);
 
 INSERT INTO directorsMovieRelations(id,personId, movieId) VALUES
 (5,4, 10);
