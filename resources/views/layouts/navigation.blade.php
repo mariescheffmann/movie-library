@@ -1,7 +1,7 @@
 <nav x-data="{ open: false }" class="bg-purple-theme dark:bg-purple-dark-theme border-b border-gray-100 dark:border-gray-700">
     <!-- Primary Navigation Menu -->
     <div class="max-w-9xl px-4 sm:px-6 lg:px-8">
-        <div class="flex h-16">
+        <div class="flex h-16 ">
             <!-- Leftside Burgermenu -->
             <div class="hidden sm:flex sm:items-center sm:ml-6">
                 <x-dropdown align="left" width="48">
@@ -44,32 +44,19 @@
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                         {{ __('Dashboard') }}
                     </x-nav-link>
-
-
-
                 </div>
-
-
-
+                @endauth
             </div>
 
-
-
-            <div class="flex-1 mx-auto mt-2 place-items-center ml-36">
-                <div class="ml-96 items-center">
+            <div class="flex mx-auto place-items-center justify-center">
+                <div class="items-center justify-center">
                     <x-searchbar />
 
                 </div>
             </div>
-
-
-
-
-
-
-
+            @auth
             <!-- Settings Dropdown -->
-            <div class="hidden sm:flex sm:items-center sm:ml-auto sm:mr-8 flex-1.5">
+            <div class="hidden sm:flex sm:items-center  sm:mr-8 flex-1.5">
                 <x-dropdown align="right" width="48">
                     <x-slot name="trigger">
                         <button class="inline-flex items-right px-3 py-2 border-purple-theme border border-transparent text-sm leading-4 font-medium rounded-md text-gray-300 dark:bg-purple-dark-theme bg-purple-theme hover:text-gray-700 dark:hover:text-gray-300 focus:outline-none transition ease-in-out duration-150">
