@@ -26,7 +26,6 @@ class CommentHistoryController extends Controller
     */ 
     public function destroy($id) {
         $comment = Comment::where('id', $id)->delete();
-        
 
         return redirect('commenthistory')->with('success',' comment deleted!');
     }
