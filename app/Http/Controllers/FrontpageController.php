@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\View;
 use App\Models\Movie;
-use App\Models\Actor;
+use App\Models\Person;
 
 
 
@@ -33,8 +33,8 @@ class FrontpageController extends Controller
 
     public function getActors()
     {
-        $actors = Actor::all()->toArray();
+        $persons = Person::all()->toArray();
 
-        return $actors;
+        return $persons;
     }
 }
