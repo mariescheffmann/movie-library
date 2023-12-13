@@ -30,12 +30,17 @@
         } 
         ?>
 
+        @if (Route::has('login'))
+        @auth
         <form method="get">
             <label for="coment">Join the discussion</label>
             <br>
             <input id="comment" name="comment" type="text" placeholder="Comment" size="60%">
             <input type="submit" name="submit" value="Submit">
         </form>
+        @endauth
+        @endif
+
 
         </div>
         
