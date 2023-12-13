@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CommentHistoryController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\FrontpageController;
 use App\Http\Controllers\MoviepageController;
@@ -39,8 +40,9 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-Route::get('/commenthistory', function () {
-    return view('commenthistory');
-});
+Route::get('/commenthistory', [CommentHistoryController::class, 'getComments'])
+->middleware(['auth', 'verified'])->name('commenthistory');
+
+Route::delete('/commenthistory/{id}', [CommentHistoryController::class, 'destroy'])->name('commenthistory.destroy');
 
 require __DIR__ . '/auth.php';

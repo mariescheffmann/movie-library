@@ -42,7 +42,7 @@ class MoviepageController extends Controller
 
     public static function insertComment($id, $inputValue) {
         Comment::insert([
-            ['movieId' => $id, 'comment' => $inputValue, 'user' => Auth::user()->id],
+            ['movieId' => $id, 'comment' => $inputValue, 'user' => Auth::user()->id, 'created_at' => now()],
         ]);
     }
 }
