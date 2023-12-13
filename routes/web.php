@@ -5,7 +5,7 @@ use App\Http\Controllers\FrontpageController;
 use App\Http\Controllers\MoviepageController;
 use App\Http\Controllers\ActorpageController;
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\SearchController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -22,6 +22,8 @@ Route::get('/', [FrontpageController::class, 'getInfo']);
 Route::get('frontpage', [FrontpageController::class, 'getInfo'])->name('frontpage');
 
 Route::get('/movie/{id}', [MoviepageController::class, 'show']);
+
+Route::get('/search', [SearchController::class,'searchMovies'])->name('searchMovies');
 
 Route::get('/actor/{id}', [ActorpageController::class, 'show']);
 
