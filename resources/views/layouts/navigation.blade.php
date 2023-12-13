@@ -30,7 +30,10 @@
             </div>
 
             <!-- Logo -->
-            <div class="shrink-0 mt-4 flex-1 items-center">
+            <div class="mt-4 flex-2 items-left">
+
+
+
                 <a href="{{ route('frontpage') }}">
                     {{-- <x-application-logo class="block h-9 w-auto fill-current text-gray-800 dark:text-gray-200" /> --}}
                     <ion-icon name="film-outline" size="large" class="text-gray-300"></ion-icon>
@@ -41,14 +44,32 @@
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                         {{ __('Dashboard') }}
                     </x-nav-link>
+
+
+
+                </div>
+
+
+
+            </div>
+
+
+
+            <div class="flex-1 mx-auto mt-2 place-items-center ml-36">
+                <div class="ml-96 items-center">
+                    <x-searchbar />
+
                 </div>
             </div>
 
-            <div class="flex ml-24">
-            </div>
+
+
+
+
+
 
             <!-- Settings Dropdown -->
-            <div class="hidden sm:flex sm:items-center sm:ml-auto sm:mr-8">
+            <div class="hidden sm:flex sm:items-center sm:ml-auto sm:mr-8 flex-1.5">
                 <x-dropdown align="right" width="48">
                     <x-slot name="trigger">
                         <button class="inline-flex items-right px-3 py-2 border-purple-theme border border-transparent text-sm leading-4 font-medium rounded-md text-gray-300 dark:bg-purple-dark-theme bg-purple-theme hover:text-gray-700 dark:hover:text-gray-300 focus:outline-none transition ease-in-out duration-150">
