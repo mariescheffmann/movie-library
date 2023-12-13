@@ -13,11 +13,13 @@
             @foreach ($searchedMovies as $movie)
             <div class="ml-6">
                 <div style="mr-4 float:left; width: 100%; height: 100%;">
+                <a class="p-3 flex-shrink-0" href="{{ 'movie/' . $movie['id']}}">
                     <img class="flex object-cover h-72 min-w-full" src="{{ asset('pictures/' . $movie['imageReference']) }}" alt="movie poster">
                     <div class="mb-6">
                         <h2 class="text-white">{{$movie->title}}</h2>
                         <p class="text-white">{{$movie->descriptionShort}}</p>
                     </div>
+</a>
                 </div>
             </div>
             @endforeach
