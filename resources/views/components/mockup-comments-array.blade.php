@@ -3,7 +3,7 @@
     <div class = "m-8"> <!-- Contains each comment -->
         <div class = "flex text-xl"> <!-- Contains which movie (with rating?) the comment has been made on and timetamp -->
             <h3 class = "pr-8">{{ $comment->movie->title }}</h3>
-            <h4>Timestamp</h4>
+            <h4>{{ $comment->created_at }}</h4>
         </div>
         <div class = "p-6 box-border h-auto w-auto p-4 border-2 bg-gray-200 rounded">
             <p class = "text-gray-700 text-xl">{{ $comment->comment }}</p>

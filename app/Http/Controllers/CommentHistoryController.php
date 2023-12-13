@@ -12,12 +12,9 @@ class CommentHistoryController extends Controller
 
     public function getComments()
     {
-        $Comments = Comment::all();
-
-        # Debugging test
-        dump($Comments[0]);
-        dump($Comments[0]->movie);
-        dump($Comments[0]->movie->comments);
+        # get which user is logged in from auth, and query in model Comment based on that.
+        $user = auth()->user();
+        $Comments = Comment::where('user', $user['id'])->get();
 
         return View::make('commentHistory', [
             'Comments' => $Comments
