@@ -13,6 +13,6 @@ class SearchController extends Controller
         $searchedMovies = Movie::where('title','like',"%$query%")->get();
 
 
-        return view('movie-search-bar', compact('searchedMovies'));
+        return view('searchpage', compact('searchedMovies'));
     }
 }

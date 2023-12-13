@@ -51,6 +51,10 @@
             <div class="flex ml-24">
             </div>
 
+
+            <x-searchbar />
+
+
             <!-- Settings Dropdown -->
             <div class="hidden sm:flex sm:items-center sm:ml-auto sm:mr-8">
                 <x-dropdown align="right" width="48">
