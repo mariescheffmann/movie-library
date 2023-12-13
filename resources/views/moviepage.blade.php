@@ -8,20 +8,18 @@
 <html>
     <body >
         <div style="float:left; width: 50%" class="text-gray-200 dark:text-gray-200 pt-10 pl-20 text-2xl">
-            <section id="movieInfo" style="margin-top: 15px;">
-                <div style="float:left; width: 50%; height: 100%;">
-                <img class="flex object-cover h-72 min-w-full" src="{{ asset('pictures/' . $movie['imageReference']) }}" alt="movie poster">
+            <section id="moviePoster" style="margin-top: 15px;">
+                <div style="float:left; margin-right: 15px;">
+                    <img class="flex object-cover h-72 min-w-full" src="{{ asset('pictures/' . $movie['imageReference']) }}" alt="movie poster">
                 </div>
-                <div >
-                    
-                    <div style="font-size:1.25em;font-weight:bold;">
-                    <div> {{ $movie['title'] }}</div>
-                    </div>
-                    <div> {{ $movie['duration'] }} </div>
-                    <div> {{ $movie['releaseYear']}} </div>
             </section>
-            <section id="biography" style="margin-top: 15px;">
-                <h1 style="font-size:1.25em;font-weight:bold;">Biography</h1>
+            <section id="movieInfo" >
+                <h1 style="font-size:1.25em;font-weight:bold; margin-top: 15px;"> {{ $movie['title'] }} </h1>
+                <div> {{ $movie['duration'] }} </div>
+                <div> {{ $movie['releaseYear']}} </div>
+                <h1 style="font-size:1.25em;font-weight:bold;  margin-top: 15px;">Rating</h1>
+                <div> {{$movie['rating']}} </div>
+                <h1 style="font-size:1.25em;font-weight:bold;  margin-top: 15px;">Biography</h1>
                 <div> {{$movie['descriptionShort']}} </div>
             </section>
         <br><br><br><br>
@@ -32,64 +30,69 @@
         } 
         ?>
 
+        @if (Route::has('login'))
+        @auth
         <form method="get">
             <label for="coment">Join the discussion</label>
             <br>
             <input id="comment" name="comment" type="text" placeholder="Comment" size="60%">
             <input type="submit" name="submit" value="Submit">
         </form>
+        @endauth
+        @endif
+
 
         </div>
         
         <div style="float: right; width: 50%" class="vl; text-gray-200 dark:text-gray-200 pt-10 pl-20 text-2xl">
 
-            <?php
-                echo '<div class="my_class" style="margin-top: 15px; width: 100%"> Directors:';
-                foreach ($directors as &$value) {
-                    echo '<div style="width: 100%" class="my_class" style="margin-top: 15px;">';
-                    $director = $value[0];
+                <div style="margin-top: 15px; width: 100%"> Directors:
+                <?php foreach ($directors as &$value): ?>
+                    <div style="margin-top: 15px; width: 100%;">
+                        <?php $director = $value[0]; ?>
+            
+                        <div style="float:left; width: 100%;">
+                            <img style="float:left; margin-bottom:15px;" width="120px" height="120px" src="{{ asset('pictures/' . $director['imageReference']) }}"/>
+                            <div style="font-weight:bold;">{{ $director["name"]; }}</div>
+                            <div>Birthday: {{ $director["birthday"]; }}</div>
+                            <div>{{ $director["nationality"];}}</div>
+                        </div>
+                       
+                    </div>
+                <?php endforeach; ?>
+                </div>
 
-                    echo '<div class="my_class" style="float:left; width: 100%"> ';
-                    echo '<img style="float:left; margin-bottom:15px;" width="120px" height="120px"/>'; 
-                    echo '<div style="font-weight:bold;">' .  $director["name"] . '</div>';
-                    echo '<div>' . 'Birthday: ' . $director["birthday"]. '</div>';
-                    echo '<div>' . $director["nationality"]. '</div>';
-                    echo '</div>';
-                    
-                    echo '</div>';
-                }
-                echo '</div>';
+                <div style="margin-top: 15px; width: 100%"> Producers:
+                <?php foreach ($producers as &$value): ?>
+                    <div style="margin-top: 15px; width: 100%;">
+                        <?php $producer = $value[0]; ?>
+            
+                        <div style="float:left; width: 100%;">
+                            <img style="float:left; margin-bottom:15px;" width="120px" height="120px" src="{{ asset('pictures/' . $producer['imageReference']) }}"/>
+                            <div style="font-weight:bold;">{{ $producer["name"]; }}</div>
+                            <div>Birthday: {{ $producer["birthday"]; }}</div>
+                            <div>{{ $producer["nationality"];}}</div>
+                        </div>
+                       
+                    </div>
+                <?php endforeach; ?>
+                </div>
 
-                echo '<div class="my_class" style="margin-top: 15px width: 100%;"> Producers: </div>';
-                foreach ($producers as &$value) {
-                    echo '<div class="my_class" style="margin-top: 15px;">';
-                    $producer = $value[0];
-
-                    echo '<div class="my_class" style="float:left; width: 50100%"> ';
-                    echo '<img style="float:left; margin-bottom:15px;" width="120px" height="120px"/>'; 
-                    echo '<div style="font-weight:bold;">' .  $producer["name"] . '</div>';
-                    echo '<div>' . 'Birthday: ' . $producer["birthday"]. '</div>';
-                    echo '<div>' . $producer["nationality"]. '</div>';
-                    echo '</div>';
-                    
-                    echo '</div>';
-                }
-
-                echo '<div class="my_class" style="margin-top: 15px;"> Actors: </div>';
-                foreach ($actors as &$value) {
-                    echo '<div class="my_class" style="margin-top: 15px;">';
-                    $actor = $value[0];
-
-                    echo '<div class="my_class" style="float:left; width: 100%"> ';
-                    echo '<img style="float:left; margin-bottom:15px;" src="buttonpng" width="120px" height="120px"/>'; 
-                    echo '<div style="font-weight:bold;">' .  $actor["name"] . '</div>';
-                    echo '<div>' . 'Birthday: ' . $actor["birthday"]. '</div>';
-                    echo '<div>' . $actor["nationality"]. '</div>';
-                    echo '</div>';
-                    
-                    echo '</div>';
-                }
-            ?>
+                <div style="margin-top: 15px; width: 100%"> Actors:
+                <?php foreach ($actors as &$value): ?>
+                    <div style="margin-top: 15px; width: 100%;">
+                        <?php $actor = $value[0]; ?>
+            
+                        <div style="float:left; width: 100%;">
+                            <img style="float:left; margin-bottom:15px;" width="120px" height="120px" src="{{ asset('pictures/' . $actor['imageReference']) }}"/>
+                            <div style="font-weight:bold;">{{ $actor["name"]; }}</div>
+                            <div>Birthday: {{ $actor["birthday"]; }}</div>
+                            <div>{{ $actor["nationality"];}}</div>
+                        </div>
+                       
+                    </div>
+                <?php endforeach; ?>
+                </div>
         </div>
     </body>
 </html>
