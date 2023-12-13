@@ -140,13 +140,15 @@
 
     @if (Route::has('login'))
     <div class="sm:fixed sm:top-0 sm:right-0 p-6 text-right z-10">
-
+    @auth
+    
         @else
         <a href="{{ route('login') }}" class="font-semibold text-gray-200 hover:text-gray-200 dark:text-gray-200 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-purple-500">Log in</a>
 
         @if (Route::has('register'))
         <a href="{{ route('register') }}" class="ml-4 font-semibold text-gray-200 hover:text-gray-200 dark:text-gray-200 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-purple-500">Register</a>
         @endif
+        @endauth
     </div>
     @endif
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
