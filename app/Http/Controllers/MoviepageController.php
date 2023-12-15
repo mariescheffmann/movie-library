@@ -37,7 +37,9 @@ class MoviepageController extends Controller
             array_push($producers, Person::find($value));
         }
 
-        return view('moviepage', ['movie' => $movie, 'id' => $id, 'actors' => $actors, 'directors' => $directors, 'producers' => $producers, 'test' => 'test']);
+        $comments = Comment::where('movieId', $id)->get();
+
+        return view('moviepage', ['movie' => $movie, 'id' => $id, 'actors' => $actors, 'directors' => $directors, 'producers' => $producers, 'comments' => $comments]);
     }
 
     public static function insertComment($id, $inputValue) {
