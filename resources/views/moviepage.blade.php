@@ -20,13 +20,16 @@
                 <h1 style="font-size:1.25em;font-weight:bold;  margin-top: 15px;">Rating</h1>
                 <div> {{$movie['rating']}} </div>
                 <h1 style="font-size:1.25em;font-weight:bold;  margin-top: 15px;">Biography</h1>
-                <div> {{$movie['descriptionShort']}} </div>
+                <div> {{$movie['descriptionLong']}} </div>
             </section>
-        <br><br><br><br>
+            <br><br><br>
 
         <?php
         if(isset($_GET['submit'])){
             MoviepageController::insertComment($id, $_GET['comment']);
+            $url =  $movie->{'id'};
+            header('Location: http://localhost:8000/movie/'. $url);
+            exit;
         } 
         ?>
 
@@ -35,14 +38,23 @@
         <form method="get">
             <label for="coment">Join the discussion</label>
             <br>
-            <input id="comment" name="comment" type="text" placeholder="Comment" size="60%">
+            <input id="comment" name="comment" type="text" placeholder="Comment" size="60%" style="color: black">
             <input type="submit" name="submit" value="Submit">
         </form>
         @endauth
         @endif
 
-
+        <div>
+                <?php foreach ($comments as &$value): ?>
+                    <h3 style="font-size: 15px;">{{ $value["user"];}}       {{$value["created_at"]}} </h3>
+                    <div class="p-2 box-border h-auto w-auto p-1 border-2 bg-gray-200 rounded" style="margin-bottom: 5 px">
+                        <?php $comment = $value[0]; ?>
+            
+                        <p class="text-gray-700 text-xl">{{ $value["comment"]; }}</p>                       
+                    </div>
+                <?php endforeach; ?>
         </div>
+    </div>
         
         <div style="float: right; width: 50%" class="vl; text-gray-200 dark:text-gray-200 pt-10 pl-20 text-2xl">
 
