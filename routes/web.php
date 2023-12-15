@@ -28,10 +28,6 @@ Route::get('/search', [SearchController::class,'searchMovies'])->name('searchMov
 
 Route::get('/actor/{id}', [ActorpageController::class, 'show']);
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
-
 Route::get('/user-test', function () {
     return view('user-test');
 })->middleware(['auth', 'verified'])->name('user-test');
