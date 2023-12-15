@@ -9,7 +9,7 @@ $decodedActor = json_decode($actor);
     <body >
         <div style="float:left; width: 50%" class="text-gray-200 dark:text-gray-200 pt-10 pl-20 text-2xl">
             <section id="actorInfo" style="margin-top: 15px;">
-                <div style="float:left; width: 50%; height: 100%;">
+                <div style="float:left; margin-right: 15px;">
                     <img class="flex object-cover h-72 min-w-full" src="{{ asset('pictures/' . $decodedActor->{'imageReference'}) }}">
                 </div>
             </section>
@@ -22,7 +22,7 @@ $decodedActor = json_decode($actor);
             </section>
         </div>
         <div style="float: right; width: 50%" class="vl; text-gray-200 dark:text-gray-200 pt-10 pl-20 text-2xl">
-             <div style="margin-top: 15px; width: 100%"> {{ $decodedActor->{'name'}; }} appears in:
+             <div style="margin-top: 15px; width: 100%"> {{ $decodedActor->{'name'}; }} appears in: 
                 <?php foreach ($movies[0] as &$value): ?>
                     <div style="margin-top: 15px; width: 100%;">
                         <div style="float:left; width: 100%;">

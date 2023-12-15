@@ -46,7 +46,8 @@
 
         <div>
                 <?php foreach ($comments as &$value): ?>
-                    <h3 style="font-size: 15px;">{{ $value["user"];}}       {{$value["created_at"]}} </h3>
+                    <h3 style="font-size: 15px;">                    
+                    {{ $value->commentor->name;}}      {{$value["created_at"]}} </h3>
                     <div class="p-2 box-border h-auto w-auto p-1 border-2 bg-gray-200 rounded" style="margin-bottom: 5 px">
                         <?php $comment = $value[0]; ?>
             
