@@ -30,4 +30,14 @@ class CommentHistoryController extends Controller
         return redirect('commenthistory')->with('success',' comment deleted!');
     }
 
+    public function update(Request $request, $id) {
+        $validated = $request->validate([
+            'comment' => 'required|string'
+        ]);
+
+        $comment = Comment::find($id)->update($validated);
+
+        return redirect('commenthistory')->with('success',' comment updated!');
+    }
+
 }
