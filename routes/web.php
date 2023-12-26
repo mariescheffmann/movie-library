@@ -5,8 +5,11 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\FrontpageController;
 use App\Http\Controllers\MoviepageController;
 use App\Http\Controllers\ActorpageController;
+use App\Http\Controllers\NewPersonpageController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SearchController;
+use App\Http\Controllers\Auth\RegisteredAdminController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -27,6 +30,8 @@ Route::get('/movie/{id}', [MoviepageController::class, 'show']);
 Route::get('/search', [SearchController::class,'searchMovies'])->name('searchMovies');
 
 Route::get('/actor/{id}', [ActorpageController::class, 'show']);
+
+Route::get('/newPerson', [NewPersonpageController::class, 'show'])->name('newPerson');
 
 Route::get('/user-test', function () {
     return view('user-test');
