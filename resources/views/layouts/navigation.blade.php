@@ -32,8 +32,8 @@
                             {{ __('New Person') }}
                         </x-dropdown-link>
 
-                        <x-dropdown-link :href="route('newPerson')">
-                            {{ __('New Person') }}
+                        <x-dropdown-link :href="route('newMovie')">
+                            {{ __('New Movie') }}
                         </x-dropdown-link>
 
                         <x-dropdown-link :href="route('newPerson')">

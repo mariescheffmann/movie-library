@@ -8,13 +8,12 @@
 <html>
   <body >
   <h1 style="padding-top: 60px; text-align: center; color: white; font-size: 35px;">Create a new person for the Movie Library</h1>
-  
-    <?php
-        if(isset($_GET['submit'])){
-            NewPersonpageController::createPerson($_GET['name']);
+   <?php
+        if(isset($_POST['submit'])){
+            NewPersonpageController::createPerson($_GET['name'], $_GET['birthday'], $_GET['nationality'], $_GET['fileUpload'], $_GET['biography']);
         } 
     ?>
-  <form method="get">
+  <form method="post" enctype="multipart/form-data">
     <div style="border: 2px hidden; border-radius: 8px; padding: 15px; margin: 70px; margin-top: 30px; background-color: #a795e0;">
       <label class="pt-10 text-xl" for="name">Name: </label>
       <input style="border-radius: 8px; margin-bottom: 4px;" id="name" name="name" type="text" placeholder="John Doe" size="60%" style="color: black">
