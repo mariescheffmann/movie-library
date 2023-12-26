@@ -24,6 +24,30 @@
                         <x-dropdown-link :href="route('frontpage')">
                             {{ __('New Releases') }}
                         </x-dropdown-link>
+
+                        @if (Route::has('login'))
+                        @auth
+                        @if (Auth::user()->admin==1)
+                        <x-dropdown-link :href="route('newPerson')">
+                            {{ __('New Person') }}
+                        </x-dropdown-link>
+
+                        <x-dropdown-link :href="route('newPerson')">
+                            {{ __('New Person') }}
+                        </x-dropdown-link>
+
+                        <x-dropdown-link :href="route('newPerson')">
+                            {{ __('New Person') }}
+                        </x-dropdown-link>
+
+                        <x-dropdown-link :href="route('newPerson')">
+                            {{ __('New Person') }}
+                        </x-dropdown-link>
+                        @endif
+                        @endauth
+                        @endif
+
+
                         </form>
                     </x-slot>
                 </x-dropdown>
