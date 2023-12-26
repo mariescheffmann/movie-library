@@ -37,6 +37,12 @@ Route::middleware('auth')->group(function () {
     Route::post('/newPerson', [NewPersonpageController::class, 'createPerson']);
     Route::get('/newMovie', [NewMoviepageController::class, 'show'])->name('newMovie');
     Route::post('/newMovie', [NewMoviepageController::class, 'createMovie']);
+    Route::get('/updatePerson/{id}', [NewPersonpageController::class, 'showUpdate'])->name('updatePerson');
+    Route::post('/updatePerson/{id}', [NewPersonpageController::class, 'updatePerson']);
+    Route::get('/deletePerson/{id}', [NewPersonpageController::class, 'deletePerson']);   
+    Route::get('/updateMovie/{id}', [NewMoviepageController::class, 'showUpdate'])->name('updateMovie');
+    Route::post('/updateMovie/{id}', [NewMoviepageController::class, 'updateMovie']);
+    Route::get('/deleteMovie/{id}', [NewMoviepageController::class, 'deleteMovie']);
 });
 
 Route::get('/user-test', function () {
