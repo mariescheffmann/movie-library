@@ -4,6 +4,14 @@
     use App\Http\Controllers\MoviepageController;
 ?> 
 
+<script>
+      document.addEventListener('DOMContentLoaded', function() {
+        document.getElementsByName('update')[0].addEventListener('click', function() {            
+            window.location.href = '/updateMovie/{{ $movie->id }}';
+        });
+      });
+</script>
+
 <x-app-layout>
 <html>
     <body >
@@ -15,6 +23,14 @@
             </section>
             <section id="movieInfo" >
                 <h1 style="font-size:1.25em;font-weight:bold; margin-top: 15px;"> {{ $movie['title'] }} </h1>
+                @if (Route::has('login'))
+                @auth
+                @if (Auth::user()->admin==1)
+                <input style="float: right; padding: 5px; border-radius: 8px; background-color: #5b4f80; color: white" type="button" name="update" value="Update"> 
+                @endif
+                @endauth
+                @endif
+                
                 <div> {{ $movie['duration'] }} </div>
                 <div> {{ $movie['releaseYear']}} </div>
                 <h1 style="font-size:1.25em;font-weight:bold;  margin-top: 15px;">Rating</h1>

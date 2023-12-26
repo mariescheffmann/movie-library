@@ -41,7 +41,7 @@
       <input type="file" id="fileUpload" name="fileUpload">
       <br>
 
-      <label class="pt-10 text-xl" for="rating">Release year: </label>
+      <label class="pt-10 text-xl" for="rating">Rating: </label>
       <input style="border-radius: 8px;" id="rating" name="rating" type="number" min="1" max="10" size="60%" style="color: black">
       <br>
       
