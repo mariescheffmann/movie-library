@@ -14,7 +14,19 @@ class NewPersonpageController extends Controller
         return view('newPersonPage');
     }
 
-    public static function createPerson($name) {
-        return $name;
+    public static function createPerson(Request $request) {
+        $name = $request->input('name');
+        $birthday = $request->input('birthday');
+        $releaseYear = $request->input('releaseYear');
+        $biography = $request->input('biography');
+
+        $path = $request->file('fileUpload')->move('pictures/actor-pictures', $request->file('fileUpload')->getClientOriginalName());
+        $imageReference = preg_replace('/pictures\//', '', $path, 1);
+
+        Person::insert([[
+            'name' => $name, 'birthday' => $birthday, 'nationality' => $nationality, 'imageReference' => $imageReference, 'biography' => $biography],
+        ]);
+
+        return $imageReference;
     }
 }

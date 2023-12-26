@@ -6,6 +6,7 @@ use App\Http\Controllers\FrontpageController;
 use App\Http\Controllers\MoviepageController;
 use App\Http\Controllers\ActorpageController;
 use App\Http\Controllers\NewPersonpageController;
+use App\Http\Controllers\NewMoviepageController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SearchController;
 use App\Http\Controllers\Auth\RegisteredAdminController;
@@ -31,7 +32,12 @@ Route::get('/search', [SearchController::class,'searchMovies'])->name('searchMov
 
 Route::get('/actor/{id}', [ActorpageController::class, 'show']);
 
-Route::get('/newPerson', [NewPersonpageController::class, 'show'])->name('newPerson');
+Route::middleware('auth')->group(function () {
+    Route::get('/newPerson', [NewPersonpageController::class, 'show'])->name('newPerson');
+    Route::post('/newPerson', [NewPersonpageController::class, 'createPerson']);
+    Route::get('/newMovie', [NewMoviepageController::class, 'show'])->name('newMovie');
+    Route::post('/newMovie', [NewMoviepageController::class, 'createMovie']);
+});
 
 Route::get('/user-test', function () {
     return view('user-test');
