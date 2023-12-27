@@ -35,7 +35,7 @@ class NewMoviepageController extends Controller
             'title' => $title, 'duration' => $duration, 'releaseYear' => $releaseYear, 'imageReference' => $imageReference, 'descriptionShort' => $descriptionShort, 'descriptionLong' => $descriptionLong, 'rating' => $rating],
         ]);
 
-        return $imageReference;
+        return redirect('frontpage')->with('success',' movie created!');
     }
 
     public static function updateMovie(Request $request, $id) {
