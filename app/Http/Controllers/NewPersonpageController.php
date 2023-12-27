@@ -24,7 +24,7 @@ class NewPersonpageController extends Controller
     public static function createPerson(Request $request) {
         $name = $request->input('name');
         $birthday = $request->input('birthday');
-        $releaseYear = $request->input('releaseYear');
+        $nationality = $request->input('nationality');
         $biography = $request->input('biography');
 
         $path = $request->file('fileUpload')->move('pictures/actor-pictures', $request->file('fileUpload')->getClientOriginalName());
@@ -34,7 +34,7 @@ class NewPersonpageController extends Controller
             'name' => $name, 'birthday' => $birthday, 'nationality' => $nationality, 'imageReference' => $imageReference, 'biography' => $biography],
         ]);
 
-        return $imageReference;
+        return redirect('frontpage')->with('success',' movie created!');
     }
 
     public static function updatePerson(Request $request, $id) {
